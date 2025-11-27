@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="El teu nom">
+    <meta name="description" content="Pàgina dedicada al grup de hip-hop Migos. Informació, vídeos, imatges i discografia.">
+    <meta name="keywords" content="Migos, hip-hop, música, rap, Culture, Bad and Boujee">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <title>Migos – Pàgina Informativa</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f3f3f3;
+        }
+
+        header {
+            background: black;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header img {
+            width: 250px;
+            border-radius: 10px;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h2 {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        /* Imatges del grup */
+        .galeria {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .foto {
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 0 5px #aaa;
+        }
+
+        .foto img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Taula discografia */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            border: 1px solid #555;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background: #222;
+            color: white;
+        }
+
+        /* Flexbox vídeos */
+        .videos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .videos iframe {
+            width: 350px;
+            height: 200px;
+            border-radius: 10px;
+        }
+
+        /* Mapa */
+        .mapa {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        iframe {
+            border: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CAPÇALERA -->
+    <header>
+        <h1>Migos</h1>
+        <p>Un dels grups més influents del hip-hop modern</p>
+        <img src="migos_header.jpg" alt="Migos Imatge Principal">
+    </header>
+
+    <main>
+
+        <!-- Link web oficial -->
+        <h2>Pàgina Oficial</h2>
+        <p style="text-align:center;">
+            <a href="https://www.qualitycontrolmusic.com/migos" target="_blank">
+                Visita la pàgina oficial de Migos
+            </a>
+        </p>
+
+        <!-- ÀUDIO -->
+        <h2>Cançó més famosa: "Bad and Boujee"</h2>
+        <audio controls>
+            <source src="bad_and_boujee.mp3" type="audio/mpeg">
+            El teu navegador no suporta l'etiqueta d'àudio.
+        </audio>
+
+        <!-- GALERIA D'IMATGES -->
+        <h2>Imatges del grup</h2>
+        <div class="galeria">
+            <div class="foto">
+                <img src="migos1.jpg" alt="Migos Foto 1">
+                <p>Migos durant una sessió fotogràfica.</p>
+            </div>
+            <div class="foto">
+                <img src="migos2.jpg" alt="Migos Foto 2">
+                <p>Actuació en directe del grup.</p>
+            </div>
+            <div class="foto">
+                <img src="migos3.jpg" alt="Migos Foto 3">
+                <p>Membres de Migos en una entrevista.</p>
+            </div>
+        </div>
+
+        <!-- LLISTES -->
+        <h2>Components del grup</h2>
+        <ol>
+            <li>Quavo</li>
+            <li>Offset</li>
+            <li>Takeoff</li>
+        </ol>
+
+        <h2>Instruments utilitzats</h2>
+        <ul>
+            <li>Veu</li>
+            <li>Producció digital</li>
+            <li>Beatmaking</li>
+        </ul>
+
+        <!-- TAULA ALBUMS -->
+        <h2>Discografia</h2>
+        <table>
+            <tr>
+                <th>Any</th>
+                <th>Àlbum</th>
+                <th>Número de cançons</th>
+            </tr>
+            <tr>
+                <td>2015</td>
+                <td>Yung Rich Nation</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td>2017</td>
+                <td>Culture</td>
+                <td>13</td>
+            </tr>
+            <tr>
+                <td>2018</td>
+                <td>Culture II</td>
+                <td>24</td>
+            </tr>
+            <tr>
+                <td>2021</td>
+                <td>Culture III</td>
+                <td>19</td>
+            </tr>
+        </table>
+
+        <!-- VIDEOS FLEXBOX -->
+        <h2>Vídeos de YouTube</h2>
+        <div class="videos">
+            <iframe src="https://www.youtube.com/embed/sY48kNsa9yg" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/b3EivLkF_Ec" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/9sJZmtLhN7M" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/PM2pMlJZJzE" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/XWggE6396kU" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/HnXiUODNwyE" allowfullscreen></iframe>
+        </div>
+
+        <!-- MAPA -->
+        <h2>Mapa – Origen del grup (Lawrenceville, Geòrgia)</h2>
+        <div class="mapa">
+            <iframe 
+                src="https://www.google.com/maps?q=Lawrenceville,+Georgia&output=embed"
+                width="600" height="400" allowfullscreen>
+            </iframe>
+        </div>
+
+    </main>
+
+</body>
+</html>
