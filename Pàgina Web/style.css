@@ -1,0 +1,505 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Hacked', 'PixelOperatorBold', monospace;
+    background-color: #000;
+    background-image: 
+        repeating-linear-gradient(
+            0deg,
+            rgba(0, 255, 255, 0.02) 0px,
+            rgba(0, 255, 255, 0.02) 1px,
+            transparent 1px,
+            transparent 2px
+        );
+    color: #f5f5f5;
+}
+
+@font-face {
+    font-family: 'Hacked';
+    src: url('https://hackedfont.com/HACKED.ttf');
+}
+@font-face {
+    font-family: 'PixelOperatorBold';
+    src: url('fonts/PixelOperator-Bold.ttf');
+}
+
+header {
+    position: relative;
+    height: 35vh;
+    background-color: #ffffff;
+    border-bottom: 4px solid #ff0f63;
+    overflow: hidden;
+    text-align: center;
+}
+
+#header>div>img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 30%;
+    transform: translateX(-50%);
+    opacity: 0.3;
+    z-index: 1;
+    pointer-events: none;
+}
+
+header h1 {
+    font-family: 'Hacked';
+    font-size: 6em; 
+    color: #ff0f63;
+    margin: 0;
+    text-shadow: 0 0 20px #000000;
+    position: relative;
+    z-index: 5;
+    letter-spacing: 3px;
+}
+
+header h2 {
+    font-family: 'PixelOperatorBold';
+    font-size: 2em;
+    color: #000;
+    margin-top: 10px;
+}
+
+header nav {
+    position: relative;
+    z-index: 10;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+header nav a {
+    text-decoration: none;
+    font-size: 1.4em;
+    color: #ff0f63;
+    font-family: 'PixelOperatorBold';
+    transition: all 0.3s ease;
+    padding: 10px 15px;
+    border: 2px solid transparent;
+}
+
+header nav a:hover {
+    color: #000000;
+    border: 2px solid #000000;
+    background-color: rgba(187, 187, 187, 0.1);
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    padding: 60px 10vw;
+    background: #111;
+}
+
+.intro {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.intro h2 {
+    font-family: 'Hacked';
+    font-size: 2em;
+    margin: 0;
+}
+
+.cursor {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+.sec1 {
+    background: rgba(0, 15, 30, 0.5);
+    border: 2px solid;
+    border-radius: 0px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+article img {
+    width: 80%;
+    margin: 20px auto;
+    display: block;
+    border-radius: 0px;
+    box-shadow: 0 0 15px #00000055;
+}
+
+article h2 {
+    font-family: 'Hacked';
+    font-size: 1.6em;
+    margin: 10px 0;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+article p {
+    color: #ddd;
+    font-family: 'PixelOperatorBold';
+    font-size: 0.85em;
+    line-height: 1.4;
+    flex-grow: 1;
+}
+
+.price-tag {
+    font-weight: bold;
+    margin: 15px 0 10px 0;
+    font-size: 1.1em;
+    font-family: 'PixelOperatorBold';
+}
+
+article a {
+    display: inline-block;
+    margin-top: auto;
+    color: inherit;
+    text-decoration: none;
+    border: 2px solid;
+    padding: 10px 25px;
+    border-radius: 0px;
+    font-family: 'PixelOperatorBold';
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.page-pink {
+    --primary: #ff0f63;
+    --accent: #000000;
+    --bg-dark: rgba(30, 0, 20, 0.6);
+}
+
+.page-pink .intro h2 {
+    color: #ff0f63;
+}
+
+.page-pink .sec1 {
+    border-color: #ff0f63;
+}
+
+.page-pink .sec1:hover {
+    border-color: #ff0f63;
+    background: rgba(255, 15, 99, 0.15);
+    transform: scale(1.03);
+}
+
+.page-pink article h2 {
+    color: #ffffff;
+}
+
+.page-pink .price-tag {
+    color: #ff0f63;
+}
+
+.page-pink article a {
+    color: #ff0f63;
+    border-color: #ff0f63;
+}
+
+.page-pink article a:hover {
+    background-color: #ff0f63;
+    color: #000;
+}
+
+.page-cyan {
+    --primary: #00ffff;
+    --accent: #000000;
+    --bg-dark: rgba(0, 30, 30, 0.6);
+}
+
+.page-cyan .intro h2 {
+    color: #00ffff;
+}
+
+.page-cyan .sec1 {
+    border-color: #00ffff;
+}
+
+.page-cyan .sec1:hover {
+    border-color: #00ffff;
+    background: rgba(0, 255, 255, 0.15);
+    transform: scale(1.03);
+}
+
+.page-cyan article h2 {
+    color: #ffffff;
+}
+
+.page-cyan .price-tag {
+    color: #00ffff;
+}
+
+.page-cyan article a {
+    color: #00ffff;
+    border-color: #00ffff;
+}
+
+.page-cyan article a:hover {
+    background-color: #00ffff;
+    color: #000;
+}
+
+.page-green {
+    --primary: #b4e612;
+    --accent: #000000;
+    --bg-dark: rgba(20, 30, 0, 0.6);
+}
+
+.page-green .intro h2 {
+    color: #b4e612;
+}
+
+.page-green .sec1 {
+    border-color: #b4e612;
+}
+
+.page-green .sec1:hover {
+    border-color: #b4e612;
+    background: rgba(180, 230, 18, 0.15);
+    transform: scale(1.03);
+}
+
+.page-green article h2 {
+    color: #ffffff;
+}
+
+.page-green .price-tag {
+    color: #b4e612;
+}
+
+.page-green article a {
+    color: #b4e612;
+    border-color: #b4e612;
+}
+
+.page-green article a:hover {
+    background-color: #b4e612;
+    color: #000;
+}
+
+.page-purple {
+    --primary: #c83dff;
+    --accent: #000000;
+    --bg-dark: rgba(30, 0, 30, 0.6);
+}
+
+.page-purple .intro h2 {
+    color: #c83dff;
+}
+
+.page-purple .sec1 {
+    border-color: #c83dff;
+}
+
+
+.page-purple article h2 {
+    color: #ffffff;
+}
+
+.page-purple .price-tag {
+    color: #c83dff;
+}
+
+.page-purple article a {
+    color: #c83dff;
+    border-color: #c83dff;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: 20px auto;
+    position: relative;
+}
+
+select {
+    background-color: rgba(0, 15, 30, 0.8);
+    border: 2px solid #c83dff;
+    color: #c83dff;
+    padding: 12px;
+    margin: 10px 0;
+    font-family: 'PixelOperatorBold';
+    box-sizing: border-box;
+    width: 100%;
+}
+
+
+label {
+    color: #ffffff;
+    font-family: 'PixelOperatorBold';
+    font-size: 1em;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    background-color: rgba(0, 15, 30, 0.8);
+    border: 2px solid #c83dff;
+    color: #c83dff;
+    padding: 12px;
+    margin: 10px 0;
+    font-family: 'PixelOperatorBold';
+    border-radius: 0px;
+    transition: all 0.2s ease;
+    box-shadow: inset 0 0 10px rgba(0, 255, 255, 0.1);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    background-color: rgba(0, 255, 255, 0.05);
+    border: 2px solid #c83dff;
+    outline: none;
+    box-shadow: inset 0 0 10px rgba(0, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+input[type="submit"] {
+    background-color: #c83dff;
+    color: #000;
+    border: 2px solid #c83dff;
+    padding: 12px 30px;
+    font-family: 'PixelOperatorBold';
+    font-size: 1em;
+    border-radius: 0px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="submit"]:hover {
+    background-color: #c83dff;
+    color: #000;
+    border: 2px solid #c83dff;
+    transform: scale(1.05);
+}
+
+form img {
+    position: absolute;
+    bottom: 0;
+    right: 0px;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    z-index: 0;
+    opacity: 0.1;
+    pointer-events: none;
+    top:25%;
+}
+
+aside {
+    padding: 40px 10vw;
+    background: #0a0a0a;
+    border-top: 2px solid #ff0f63;
+}
+
+aside h2 {
+    color: #ff0f63;
+    font-family: 'PixelOperatorBold';
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
+}
+
+aside li {
+    margin: 10px 0;
+    font-family: 'PixelOperatorBold';
+}
+
+aside a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+aside a:hover {
+    color: #ff0f63;
+}
+
+footer {
+    background: #191919;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    border-top: 2px solid #ff0f63;
+    font-family: 'PixelOperatorBold';
+}
+
+footer .xarxes a {
+    color: #ff0f63;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+footer .xarxes a:hover {
+    text-decoration: underline;
+}
+
+
+#eye {
+    float: right;
+    margin: -110px;
+    padding: 0;
+    width: 100px;
+    height: 100px;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.faq-section {
+    text-align: left;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-left: 3px solid;
+}
+
+.faq-item h4 {
+    margin: 0 0 10px 0;
+    font-size: 1.1em;
+}
+
+.faq-item p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+@media (max-width: 768px) {
+    header h1 { font-size: 4em; }
+    header nav ul { flex-direction: column; gap: 10px; }
+    .intro h2 { font-size: 1.5em; }
+    main { grid-template-columns: 1fr; padding: 40px 5vw; }
+}

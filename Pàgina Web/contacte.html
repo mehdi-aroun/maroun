@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="utf-8">
+    <title>CONTACTE.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="Media/favicon.png" />
+</head>
+<body id="whiteborder" class="page-purple">
+
+    <header>
+        <div id="header">
+            <div>
+                <span>l</span><span>o</span><span>c</span><span>k</span><span>e</span>
+                <img src="Media/Lightning.png" alt="LIGHTING" />
+            </div>
+        </div>
+        <h1>GRIND.</h1>
+        <h2><strong>La teva botiga</strong> de videojocs</h2>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Inici</a></li>
+                <li><a href="cataleg.html">Catàleg</a></li>
+                <li><a href="ofertes.html">Ofertes</a></li>
+                <li><a href="contacte.html">Contacte</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <article class="intro">
+            <h2>Contacta amb nosaltres<span class="cursor">_</span></h2>
+        </article>        
+
+        <article class="sec1 full-width" style="width: 90%; margin: 0 auto;">
+            <h2>Formulari de contacte</h2>
+            <p style="margin-bottom: 30px; color: #c83dff; font-size: 20px;">Envieu-nos el vostre missatge i respondrem el mes aviat possible.</p>
+            <form>
+                <div>
+                    <label for="nom">Nom:</label>
+                    <input type="text" id="nom" name="nom" placeholder="El teu nom" required>
+                </div>
+
+                <div>
+                    <label for="cognom">Cognom:</label>
+                    <input type="text" id="cognom" name="cognom" placeholder="El teu cognom" required>
+                </div>
+
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="El teu email" required>
+                </div>
+
+                <div>
+                    <label for="pais">País:</label>
+                    <select id="pais" name="pais" required>
+                        <option value="">Selecciona un país</option>
+                        <option>Espanya</option>
+                        <option>França</option>
+                        <option>Itàlia</option>
+                        <option>Portugal</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="assumpte">Assumpte:</label>
+                    <input type="text" id="assumpte" name="assumpte" placeholder="De què tracta?" required>
+                </div>
+
+                <div>
+                    <label for="missatge">Missatge:</label>
+                    <textarea id="missatge" name="missatge" placeholder="Escriu el teu missatge..." required></textarea>
+                </div>
+
+                <input type="submit" value="Enviar missatge">
+                <img src="Media/Hand.png" alt="DEDSEC HAND"/> 
+            </form>
+        </article>
+        
+        <article class="sec1 full-width">
+            <h2>Informacio de contacte</h2>
+            <div style="display: flex; justify-content: center; gap: 60px; flex-wrap: wrap;">
+                <div>
+                    <h3 style="color: #c83dff; margin-bottom: 10px;">Email</h3>
+                    <p><a href="mailto:support@grind.com" style="color: #c83dff; text-decoration: none;">support@grind.com</a></p>
+                </div>
+                <div>
+                    <h3 style="color: #c83dff; margin-bottom: 10px;">Telefon</h3>
+                    <p><a href="tel:+34900000000" style="color: #c83dff; text-decoration: none;">+34 900 000 000</a></p>
+                </div>
+                <div>
+                    <h3 style="color: #c83dff; margin-bottom: 10px;">Horari</h3>
+                    <p style="color: #ffffff;">Dilluns - Divendres: 10:00-18:00<br/>Dissabte: 10:00-14:00<br/>Diumenge: Tancat</p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="sec1 full-width">
+            <h2>Preguntes frequents</h2>
+            <div class="faq-section">
+                <div class="faq-item" style="border-left-color: #c83dff;">
+                    <h4 style="color: #c83dff;">Com es lliuren els jocs?</h4>
+                    <p>Els jocs digitals es lliuren instantàniament per correu electrònic. Les còpies físiques s'envien per correu postal en 2-3 dies laborals.</p>
+                </div>
+                <div class="faq-item" style="border-left-color: #c83dff;">
+                    <h4 style="color: #c83dff;">Quins metodes de pagament accepteu?</h4>
+                    <p>Acceptem targetes de crèdit/dèbit (Visa, Mastercard), PayPal i transferència bancària per a comandes superiors a 100€.</p>
+                </div>
+                <div class="faq-item" style="border-left-color: #c83dff;">
+                    <h4 style="color: #c83dff;">Puc fer devolucions?</h4>
+                    <p>Els jocs digitals no es poden retornar. Els jocs físics sense obrir es poden retornar en 30 dies amb tiquets original.</p>
+                </div>
+                <div class="faq-item" style="border-left-color: #c83dff;">
+                    <h4 style="color: #c83dff;">Hi ha descomptes per memberships?</h4>
+                    <p>Sí! Els membres de GRIND+ reben 15% de descompte en totes les compres i accés anticipat a ofertes especials.</p>
+                </div>
+            </div>
+        </article>
+        
+    </main>
+
+
+    <footer>
+        <p>&copy;2025 GRIND. - Tots els drets reservats</p>
+    </footer>
+
+</body>
+</html>
