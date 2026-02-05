@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parc Ambiental de Bufalvent</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        
+    </style>
+</head>
+
+<body>
+<header>
+    <div>
+        <h1>Parc Ambiental de Bufalvent</h1>
+        <p class="lead">Gestió sostenible dels residus municipals</p>
+    </div>
+</header>
+
+<section id="info">
+    <h2>Què és el Parc Ambiental?</h2>
+    <div class="columns">
+        <p>
+            El Parc ambiental de Bufalvent és propietat del Consorci del Bages i gestiona els residus municipals de la comarca i del Moianès. Aquí es tracta i selecciona el màxim de residus possibles, tot respectant el medi ambient. L’entorn paisatgístic és privilegiat, amb oliveres, vinyes, boscos i animals que pasturen lliurement. Les vistes són espectaculars, amb Montserrat al fons.
+        </p>
+        <p>
+            A més de la gestió de residus, el parc ofereix activitats educatives, visites guiades i programes de sensibilització ambiental per a escolars i ciutadans. El respecte pel territori i la sostenibilitat són els pilars de tota l’activitat.
+        </p>
+    </div>
+</section>
+
+<section id="gallery">
+    <h2>Galeria d’imatges</h2>
+    <div class="gallery">
+        <img src="https://www.consorcidelbages.cat/media/1019/parcambiental2.jpg" alt="Vista Parc 1">
+        <img src="https://www.consorcidelbages.cat/media/1018/parcambiental3.jpg" alt="Vista Parc 2">
+        <img src="https://www.consorcidelbages.cat/media/1017/parcambiental4.jpg" alt="Vista Parc 3">
+    </div>
+</section>
+
+<section id="visor">
+    <h2>Visor 3D – Punts del Parc</h2>
+    <p>Fes clic sobre els punts per escoltar la informació:</p>
+    <div id="points" class="mb-4">
+        <span class="point" data-audio="audio0.mp3">Parc Ambiental</span> |
+        <span class="point" data-audio="audio1.mp3">Oficines</span> |
+        <span class="point" data-audio="audio2.mp3">Abocador</span> |
+        <span class="point" data-audio="audio3.mp3">Planta vidre i envasos</span> |
+        <span class="point" data-audio="audio4.mp3">Motor de biogàs</span> |
+        <span class="point" data-audio="audio5.mp3">Basses d’aigües pluvials</span> |
+        <span class="point" data-audio="audio6.mp3">Parc solar</span> |
+        <span class="point" data-audio="audio7.mp3">Planta de compostatge</span> |
+        <span class="point" data-audio="audio8.mp3">Nova planta de valorització</span> |
+        <span class="point" data-audio="audio9.mp3">Falconeria</span>
+    </div>
+    <iframe src="https://vegettta777.github.io/web3d/ex8/ex8.html"></iframe>
+</section>
+
+<!-- Vídeo 360 -->
+<section id="video360">
+    <h2>Vídeo 360º</h2>
+    <iframe 
+        src="https://www.youtube.com/embed/VIDEO_ID?rel=0"
+        allowfullscreen>
+    </iframe>
+</section>
+
+<!-- Map -->
+<section id="map">
+    <h2>On ens trobem</h2>
+    <iframe 
+        src="https://www.google.com/maps?q=Parc%20Ambiental%20del%20Bages&output=embed">
+    </iframe>
+</section>
+
+<!-- Agraïments -->
+<section id="credits">
+    <h2>Agraïments i Fonts</h2>
+    <ul>
+        <li><a href="https://www.consorcidelbages.cat/parc-ambiental/" target="_blank">Consorci del Bages – Parc Ambiental</a></li>
+        <li><a href="https://www.awwwards.com/websites/360/" target="_blank">Awwwards – Webs 360º</a></li>
+    </ul>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 Parc Ambiental del Bages | Projecte educatiu | Feta amb ❤️ amb HTML, CSS, Bootstrap i JS</p>
+</footer>
+
+<!-- JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Reproducció d'àudio pels punts
+    const points = document.querySelectorAll('.point');
+    let currentAudio = null;
+
+    points.forEach(point => {
+        point.addEventListener('click', () => {
+            if(currentAudio) currentAudio.pause();
+            currentAudio = new Audio(point.dataset.audio);
+            currentAudio.play();
+        });
+    });
+</script>
+
+</body>
+</html>
