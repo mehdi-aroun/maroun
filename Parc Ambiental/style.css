@@ -1,7 +1,97 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
     background: #f4f6f5;
     color: #333;
     scroll-behavior: smooth;
+    margin: 0;
 }
 
+header {
+    background: url('Media/parc_ambiental_banner.webp') center/cover no-repeat;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 8px #000;
+}
+
+.header-content {
+    text-align: center;
+}
+
+section {
+    padding: 50px 10%;
+}
+
+h2 {
+    color: #2c6e49;
+    margin-bottom: 25px;
+}
+
+.columns {
+    column-count: 2;
+    column-gap: 40px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.4s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+#panorama {
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.iframe-wrapper iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
+    border-radius: 10px;
+}
+
+footer {
+    background: #2c6e49;
+    color: #fff;
+    text-align: center;
+    padding: 30px 10px;
+}
+
+footer a {
+    color: #c9f0dd;
+    text-decoration: none;
+}
+
+@media (max-width: 575px) {
+    header h1 { font-size: 2rem; }
+    .columns { column-count: 1; }
+    section { padding: 30px 5%; }
+    #panorama { height: 300px; }
+}
+
+@media (min-width: 576px) and (max-width: 992px) {
+    .columns { column-count: 1; }
+}
+
+@media (min-width: 993px) {
+    .columns { column-count: 2; }
+}

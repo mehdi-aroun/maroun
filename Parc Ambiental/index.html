@@ -5,17 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parc Ambiental de Bufalvent</title>
 
+    <link rel="icon" type="image/png" href="Media/favicon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <style>
-        
-    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum/build/pannellum.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/pannellum/build/pannellum.js"></script>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
 <header>
-    <div>
+    <div class="header-content">
         <h1>Parc Ambiental de Bufalvent</h1>
         <p class="lead">Gestió sostenible dels residus municipals</p>
     </div>
@@ -25,10 +27,10 @@
     <h2>Què és el Parc Ambiental?</h2>
     <div class="columns">
         <p>
-            El Parc ambiental de Bufalvent és propietat del Consorci del Bages i gestiona els residus municipals de la comarca i del Moianès. Aquí es tracta i selecciona el màxim de residus possibles, tot respectant el medi ambient. L’entorn paisatgístic és privilegiat, amb oliveres, vinyes, boscos i animals que pasturen lliurement. Les vistes són espectaculars, amb Montserrat al fons.
+            El Parc Ambiental de Bufalvent és propietat del Consorci del Bages i gestiona els residus municipals de la comarca i del Moianès. Aquí es tracta i selecciona el màxim de residus possibles, tot respectant el medi ambient.
         </p>
         <p>
-            A més de la gestió de residus, el parc ofereix activitats educatives, visites guiades i programes de sensibilització ambiental per a escolars i ciutadans. El respecte pel territori i la sostenibilitat són els pilars de tota l’activitat.
+            A més de la gestió de residus, el parc promou l’educació ambiental mitjançant visites guiades i programes educatius per a escolars i ciutadans.
         </p>
     </div>
 </section>
@@ -36,76 +38,98 @@
 <section id="gallery">
     <h2>Galeria d’imatges</h2>
     <div class="gallery">
-        <img src="https://www.consorcidelbages.cat/media/1019/parcambiental2.jpg" alt="Vista Parc 1">
-        <img src="https://www.consorcidelbages.cat/media/1018/parcambiental3.jpg" alt="Vista Parc 2">
-        <img src="https://www.consorcidelbages.cat/media/1017/parcambiental4.jpg" alt="Vista Parc 3">
+        <img src="Media/gal1.jpg" alt="Vista del parc">
+        <img src="Media/gal2.jpg" alt="Instal·lacions">
+        <img src="Media/gal3.jpg" alt="Entorn natural">
     </div>
 </section>
 
 <section id="visor">
-    <h2>Visor 3D – Punts del Parc</h2>
-    <p>Fes clic sobre els punts per escoltar la informació:</p>
-    <div id="points" class="mb-4">
-        <span class="point" data-audio="audio0.mp3">Parc Ambiental</span> |
-        <span class="point" data-audio="audio1.mp3">Oficines</span> |
-        <span class="point" data-audio="audio2.mp3">Abocador</span> |
-        <span class="point" data-audio="audio3.mp3">Planta vidre i envasos</span> |
-        <span class="point" data-audio="audio4.mp3">Motor de biogàs</span> |
-        <span class="point" data-audio="audio5.mp3">Basses d’aigües pluvials</span> |
-        <span class="point" data-audio="audio6.mp3">Parc solar</span> |
-        <span class="point" data-audio="audio7.mp3">Planta de compostatge</span> |
-        <span class="point" data-audio="audio8.mp3">Nova planta de valorització</span> |
-        <span class="point" data-audio="audio9.mp3">Falconeria</span>
-    </div>
-    <iframe src="https://vegettta777.github.io/web3d/ex8/ex8.html"></iframe>
+    <h2>Visor 360º del Parc</h2>
+
+    <select id="imageSelector" class="form-select mb-4">
+        <option value="scene1">Vista General 1</option>
+        <option value="scene2">Vista General 2</option>
+        <option value="scene3">Oficines 1</option>
+        <option value="scene4">Oficines 2</option>
+        <option value="scene5">Abocador 1</option>
+        <option value="scene6">Abocador 2</option>
+        <option value="scene7">Planta de Transferencia 1</option>
+        <option value="scene8">Planta de Transferencia 2</option>
+        <option value="scene9">Motor Biogas</option>
+        <option value="scene10">Basses d'Aigua</option>
+        <option value="scene11">Parc Solar</option>
+        <option value="scene12">Planta Compostatge 1</option>
+        <option value="scene13">Planta Compostatge 2</option>
+        <option value="scene14">Nova Planta</option>
+        <option value="scene15">Falconeria</option>
+    </select>
+
+    <div id="panorama"></div>
 </section>
 
-<!-- Vídeo 360 -->
 <section id="video360">
     <h2>Vídeo 360º</h2>
-    <iframe 
-        src="https://www.youtube.com/embed/VIDEO_ID?rel=0"
-        allowfullscreen>
-    </iframe>
+    <div class="iframe-wrapper">
+        <iframe 
+            src="https://www.youtube.com/embed/1hL05x7JO4o"
+            allowfullscreen>
+        </iframe>
+    </div>
 </section>
 
-<!-- Map -->
 <section id="map">
     <h2>On ens trobem</h2>
-    <iframe 
-        src="https://www.google.com/maps?q=Parc%20Ambiental%20del%20Bages&output=embed">
-    </iframe>
+    <div class="iframe-wrapper">
+        <iframe 
+            src="https://www.google.com/maps?q=Parc%20Ambiental%20del%20Bages&output=embed">
+        </iframe>
+    </div>
 </section>
 
-<!-- Agraïments -->
 <section id="credits">
     <h2>Agraïments i Fonts</h2>
     <ul>
         <li><a href="https://www.consorcidelbages.cat/parc-ambiental/" target="_blank">Consorci del Bages – Parc Ambiental</a></li>
-        <li><a href="https://www.awwwards.com/websites/360/" target="_blank">Awwwards – Webs 360º</a></li>
+        <li><a href="https://pannellum.org/" target="_blank">Llibreria Pannellum (visor 360)</a></li>
+        <li><a href="https://www.awwwards.com/websites/360/" target="_blank">Inspiració 360º</a></li>
     </ul>
 </section>
 
-<!-- Footer -->
 <footer>
-    <p>© 2026 Parc Ambiental del Bages | Projecte educatiu | Feta amb ❤️ amb HTML, CSS, Bootstrap i JS</p>
+    <p>© 2026 Parc Ambiental del Bages</p>
 </footer>
 
-<!-- JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    // Reproducció d'àudio pels punts
-    const points = document.querySelectorAll('.point');
-    let currentAudio = null;
+let viewer = pannellum.viewer('panorama', {
+    default: {
+        firstScene: 'scene1',
+        sceneFadeDuration: 1000
+    },
+    scenes: {
+        scene1: { type: 'equirectangular', panorama: 'Media/360/1.jpg' },
+        scene2: { type: 'equirectangular', panorama: 'Media/360/2.jpg' },
+        scene3: { type: 'equirectangular', panorama: 'Media/360/3.jpg' },
+        scene4: { type: 'equirectangular', panorama: 'Media/360/4.jpg' },
+        scene5: { type: 'equirectangular', panorama: 'Media/360/5.jpg' },
+        scene6: { type: 'equirectangular', panorama: 'Media/360/6.jpg' },
+        scene7: { type: 'equirectangular', panorama: 'Media/360/7.jpg' },
+        scene8: { type: 'equirectangular', panorama: 'Media/360/8.jpg' },
+        scene9: { type: 'equirectangular', panorama: 'Media/360/9.jpg' },
+        scene10: { type: 'equirectangular', panorama: 'Media/360/10.jpg' },
+        scene11: { type: 'equirectangular', panorama: 'Media/360/11.jpg' },
+        scene12: { type: 'equirectangular', panorama: 'Media/360/12.jpg' },
+        scene13: { type: 'equirectangular', panorama: 'Media/360/13.jpg' },
+        scene14: { type: 'equirectangular', panorama: 'Media/360/14.jpg' },
+        scene15: { type: 'equirectangular', panorama: 'Media/360/15.jpg' }
+    }
+});
 
-    points.forEach(point => {
-        point.addEventListener('click', () => {
-            if(currentAudio) currentAudio.pause();
-            currentAudio = new Audio(point.dataset.audio);
-            currentAudio.play();
-        });
-    });
+document.getElementById('imageSelector').addEventListener('change', function() {
+    viewer.loadScene(this.value);
+});
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
