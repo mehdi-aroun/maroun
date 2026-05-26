@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<link href="https://fonts.cdnfonts.com/css/the-bubble-letters" rel="stylesheet">
+
+<style>
+
+body{
+    background:url("fons.jpg");
+    background-size:cover;
+    font-family:'the bubble letters',sans-serif;
+    text-align:center;
+}
+
+h1{
+    color:white;
+    font-size:78px;
+    text-shadow:4px 4px 0px #2e6b2e;
+}
+
+#tauler{
+    width:500px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,150px);
+    grid-gap:25px;
+    padding:30px;
+}
+
+.topo{
+    width:150px;
+    cursor:pointer;
+    border-radius:50%;
+    background:#795233;
+    padding:10px;
+    transition:transform 0.1s;
+}
+
+.topo:hover{
+    transform:scale(1.1);
+}
+
+#puntuacio{
+    margin-top:25px;
+    font-size:46px;
+    color:white;
+    text-shadow:3px 3px 0px #2e6b2e;
+}
+
+#combo{
+    font-size:34px;
+    color:yellow;
+    text-shadow:2px 2px black;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Whac-A-Mole</h1>
+
+<div id="tauler">
+
+<img class="topo" id="t0" src="topoNo.jpg" onclick="cop(0)">
+<img class="topo" id="t1" src="topoNo.jpg" onclick="cop(1)">
+<img class="topo" id="t2" src="topoNo.jpg" onclick="cop(2)">
+
+<img class="topo" id="t3" src="topoNo.jpg" onclick="cop(3)">
+<img class="topo" id="t4" src="topoNo.jpg" onclick="cop(4)">
+<img class="topo" id="t5" src="topoNo.jpg" onclick="cop(5)">
+
+<img class="topo" id="t6" src="topoNo.jpg" onclick="cop(6)">
+<img class="topo" id="t7" src="topoNo.jpg" onclick="cop(7)">
+<img class="topo" id="t8" src="topoNo.jpg" onclick="cop(8)">
+
+</div>
+
+<div id="puntuacio">
+Punts: <span id="punts">0</span>
+</div>
+
+<div id="combo">
+Combo: <span id="comboNum">0</span>
+</div>
+
+<script>
+
+let toposActius=[]
+let punts=0
+let combo=0
+let velocitat=1000
+let timer
+
+function iniciarJoc(){
+    timer=setInterval(mouTopo,velocitat)
+}
+
+function reiniciarTimer(){
+    clearInterval(timer)
+    timer=setInterval(mouTopo,velocitat)
+}
+
+function mouTopo(){
+
+    for(let i=0;i<toposActius.length;i++){
+        document.getElementById("t"+toposActius[i]).src="topoNo.jpg"
+    }
+
+    toposActius=[]
+
+    while(toposActius.length<3){
+
+        let random=Math.floor(Math.random()*9)
+
+        if(!toposActius.includes(random)){
+            toposActius.push(random)
+            document.getElementById("t"+random).src="topoSi.jpg"
+        }
+    }
+
+}
+
+function cop(num){
+
+    document.getElementById("t"+num).src="topoPam.jpg"
+
+    if(toposActius.includes(num)){
+
+        combo++
+
+        let puntsGuanyats=10*combo
+        punts+=puntsGuanyats
+
+        document.getElementById("punts").innerHTML=punts
+        document.getElementById("comboNum").innerHTML=combo
+
+        var audio=new Audio('boing.mp3')
+        audio.play()
+
+        if(combo%3==0 && velocitat>400){
+            velocitat-=100
+            reiniciarTimer()
+        }
+
+    }else{
+
+        punts-=5
+        if(punts<0)punts=0
+
+        combo=0
+
+        document.getElementById("punts").innerHTML=punts
+        document.getElementById("comboNum").innerHTML=combo
+
+    }
+
+    setTimeout(function(){
+        document.getElementById("t"+num).src="topoNo.jpg"
+    },300)
+
+}
+
+iniciarJoc()
+
+</script>
+
+</body>
+</html>
