@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <title>Rick & Morty</title>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Rick & Morty</h1>
+
+    <p>Busca un personatge:</p>
+
+    <div class="search">
+        <input type="text" id="searchInput" placeholder="Ex: Rick">
+        <button onclick="buscar()">Buscar</button>
+        <button onclick="limpiar()">Netejar</button>
+    </div>
+
+    <div id="historial"></div>
+
+    <div id="resultat"></div>
+
+</div>
+
+<script>
+
+    let historial = [];
+
+    document.getElementById("searchInput").addEventListener("keydown", function(e) {
+        if (e.key === "Enter") buscar();
+    });
+
+    function buscar() {
+
+        const nom = document.getElementById("searchInput").value.trim();
+        const resultat = document.getElementById("resultat");
+
+        if (!nom) {
+            resultat.innerHTML = `<p class="error">Escriu un nom</p>`;
+            return;
+        }
+
+        resultat.innerHTML = `<p class="loading">Carregant...</p>`;
+
+        fetch("https://rickandmortyapi.com/api/character/?name=" + nom)
+            .then(r => r.json())
+            .then(data => {
+
+                setTimeout(() => {
+
+                    if (!data.results) {
+                        resultat.innerHTML = `<p class="error">Cap personatge trobat</p>`;
+                        return;
+                    }
+
+                    historial.unshift(nom);
+                    historial = historial.slice(0, 5);
+
+                    document.getElementById("historial").innerHTML =
+                        `<p><strong>Historial:</strong> ${historial.join(", ")}</p>`;
+
+                    resultat.innerHTML = "";
+
+                    for (let personatge of data.results) {
+
+                        resultat.innerHTML += `
+                            <div class="card">
+
+                                <img src="${personatge.image}" alt="${personatge.name}">
+
+                                <h2>${personatge.name}</h2>
+
+                                <div class="info">
+                                    <p><strong>Espècie:</strong> ${personatge.species}</p>
+                                    <p><strong>Gènere:</strong> ${personatge.gender}</p>
+                                    <p><strong>Origen:</strong> ${personatge.origin.name}</p>
+                                    <p><strong>Estat:</strong> ${personatge.status}</p>
+                                </div>
+
+                            </div>
+                        `;
+                    }
+
+                }, 900);
+            })
+            .catch(() => {
+                resultat.innerHTML = `<p class="error">Error carregant dades</p>`;
+            });
+    }
+
+    function limpiar() {
+        document.getElementById("searchInput").value = "";
+        document.getElementById("resultat").innerHTML = "";
+    }
+
+</script>
+
+</body>
+</html>
